@@ -93,6 +93,6 @@ export interface MRData {
     RaceTable: RaceTable;
 }
 
-export interface RootObject {
+export interface F1Results {
     MRData: MRData;
 }

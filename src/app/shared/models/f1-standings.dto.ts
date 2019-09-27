@@ -46,6 +46,6 @@ export interface MRData {
     StandingsTable: StandingsTable;
 }
 
-export interface RootObject {
+export interface F1Standings {
     MRData: MRData;
 }
