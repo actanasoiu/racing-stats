@@ -1,0 +1,63 @@
+@import "../../../scss/index.scss";
+
+p {
+  color: #ba9705;
+  font-size: 1.5em;
+}
+
+table {
+  background-color: rgba(gray(5), 0.5);
+  width: 100%;
+  color: #ddd;
+  text-align: center;
+
+  border-collapse: collapse;
+
+  td,
+  th {
+    padding: 0.2em 0.5em;
+    word-break: break-word;
+    font-size: 1.1rem;
+  }
+
+  thead,
+  tbody {
+    border: 2px solid transparent;
+    box-shadow: $box-shadow-accent;
+  }
+
+  th {
+    background-color: black;
+    color: $accent;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-left: 1px solid $accent;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+
+  td {
+    text-align: left;
+    border: 1px dashed #ba9705;
+
+    &:first-child,
+    &:nth-child(n + 4) {
+      text-align: center;
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: gray(5);
+  }
+
+  tr.highlight td:nth-child(3) {
+    background-color: $accent;
+    color: black;
+    border-color: black;
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../../scss/index.scss";
+
+.season-card {
+  padding: 0 $spacer/2;
+  width: $spacer * 10;
+  height: $spacer * 5;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #ddd;
+  background: url("./../../../assets/cardbg3.jpg") center center;
+  background-size: cover;
+  box-shadow: $box-shadow;
+  transition: 0.2s;
+  overflow: hidden;
+  opacity: 0.7;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: $fw-bold;
+  }
+
+  &__content {
+    font-size: 1.7rem;
+    font-weight: $fw-bold;
+
+    span {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+
+    &:last-of-type {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
+a.season-card-link {
+  cursor: pointer;
+  color: #ddd;
+  text-decoration: none;
+  text-shadow: 1px 10px 5px black;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    .season-card {
+      border-color: $accent;
+      box-shadow: $box-shadow-accent;
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    .season-card {
+      border-color: $accent;
+      box-shadow: $box-shadow-accent-tilt;
+      text-shadow: 1px 20px 5px black;
+      transform: rotateX(-20deg);
+      opacity: 1;
+    }
+  }
+}

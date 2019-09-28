@@ -43,9 +43,9 @@ export class F1Effects {
     @Effect()
     getSeasonResults = this.actions$.pipe(
         ofType(F1Actions.GET_SEASON_DETAILS),
-        switchMap(() => {
+        switchMap((action: F1Actions.GetSeasonDetails) => {
             return this.http.get<F1Results>(
-                `http://ergast.com/api/f1/2005/results/1.json`
+                `http://ergast.com/api/f1/${action.payload}/results/1.json`
             );
         }),
         catchError(val => of(`I caught: ${val}`)),
@@ -66,7 +66,6 @@ export class F1Effects {
             return new F1Actions.SetSeasonDetails(results);
         })
     );
-
 
     constructor(
         private actions$: Actions,

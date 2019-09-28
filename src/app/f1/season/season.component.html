@@ -1,4 +1,10 @@
-<div>
-    {{data.season}}
-    <!-- <app-season-details [data]="data.season"></app-season-details> -->
-</div>
+<a (click)="onSeasonSelected()"
+   class="season-card-link"
+   [class.active]="(selectedSeason | async) && (selectedSeason | async).season === data.season">
+    <div class="season-card">
+        <p class="season-card__title">{{data.season}}</p>
+        <p class="season-card__subtitle">({{data.round}} rounds)</p>
+        <p class="season-card__content">{{data.driver.givenName}} <span>{{data.driver.familyName}}</span></p>
+        <p class="season-card__subtitle">{{data.constructor.name}}</p>
+    </div>
+</a>

@@ -1,17 +1,20 @@
-import { DataService } from './../shared/services/data.service';
+import { F1RoutingModule } from './f1-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SeasonListComponent } from './season-list/season-list.component';
 import { SeasonComponent } from './season/season.component';
 import { SeasonDetailsComponent } from './season-details/season-details.component';
-
-
+import { SeasonsComponent } from './seasons/seasons.component';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [SeasonListComponent, SeasonComponent, SeasonDetailsComponent],
+  declarations: [SeasonComponent, SeasonDetailsComponent, SeasonsComponent],
   imports: [
-    CommonModule
+    RouterModule,
+    SharedModule,
+    CommonModule,
+    F1RoutingModule,
   ],
-  exports: [SeasonListComponent, SeasonComponent, SeasonDetailsComponent]
+  exports: [SeasonComponent, SeasonDetailsComponent, SeasonsComponent]
 })
 export class F1Module { }

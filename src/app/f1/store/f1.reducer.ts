@@ -1,18 +1,14 @@
-import { F1ResultWinnerModel } from 'src/app/f1/models/f1-result-winner.model';
-import { F1Results } from './../../shared/models/f1-results.dto';
-import { F1SeasonWinnerModel } from './../models/f1-season-winner.model';
 import * as F1Actions from './f1.actions';
+import { F1SeasonWinnerModel } from './../models/f1-season-winner.model';
 
 export interface State {
     seasons: F1SeasonWinnerModel[];
-    seasonSelected: F1SeasonWinnerModel;
-    seasonDetails: F1ResultWinnerModel[];
+    selectedSeason: F1SeasonWinnerModel;
 }
 
 const initialState: State = {
     seasons: [],
-    seasonSelected: null,
-    seasonDetails: [],
+    selectedSeason: null,
 };
 
 export function f1Reducer(
@@ -25,11 +21,24 @@ export function f1Reducer(
                 ...state,
                 seasons: [...action.payload]
             };
-        case F1Actions.SET_SEASON_DETAILS:
+        case F1Actions.SELECT_SEASON:
             return {
                 ...state,
-                seasonDetails: [...action.payload]
+                selectedSeason: { ...action.payload }
+            }
+        case F1Actions.SET_SEASON_DETAILS:
+            const index = state.seasons.findIndex(x => +x.season === +state.selectedSeason.season);
+            const selectedSeason = {
+                ...state.selectedSeason,
+                results: [...action.payload]
             };
+            const cloneSeasons = [...state.seasons];
+            cloneSeasons.splice(index, 1, selectedSeason);
+            return {
+                ...state,
+                seasons: cloneSeasons,
+                selectedSeason
+            }
         default:
             return state;
     }

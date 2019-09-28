@@ -1,0 +1,29 @@
+$accent: #ba9705;
+
+$primary: #3c3463;
+
+$dark-blue: #3c3463;
+$light-blue: #1f9ac7;
+$purple: #6600ff;
+$green: #269110;
+$yellow: #ffc72e;
+$coral: #ff8466;
+
+$white-1: #efefef;
+
+$header: linear-gradient(180deg, $coral 0%, $dark-blue 100%);
+$bg-card-wsdc: linear-gradient(180deg, rgba($yellow, 0.7) 0%, rgba($yellow, 0.3) 100%);
+$bg-card-social: linear-gradient(180deg, rgba($yellow, 0.7) 0%, rgba($yellow, 0.3) 100%);
+$bg-card-shortcut-tiers: linear-gradient(90deg, rgba($yellow, 0.5) 0%, rgba($green, 0.7) 100%);
+$bg-card-shortcut-rules: linear-gradient(90deg, rgba($coral, 0.5) 0%, rgba($dark-blue, 0.7) 100%);
+$bg-card-shortcut-action: linear-gradient(90deg, rgba($green, 0.5) 0%, rgba($dark-blue, 0.7) 100%);
+$bg: $white-1;
+
+// grays from lightest to darkest
+$grays: (
+  1: #fff,
+  2: #f3f3f3,
+  3: #9d9d9d,
+  4: #5d5d5d,
+  5: #212121
+);

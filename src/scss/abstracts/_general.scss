@@ -1,0 +1,10 @@
+$spacer: 2em;
+
+$breakpoints: (
+  small: 450px,
+  big: 860px
+);
+
+$box-shadow: 0 0 0.5em rgba(gray(3), 0.65);
+$box-shadow-accent: 0 0 0.5em $accent;
+$box-shadow-accent-tilt: 0 0.5em 0.5em $accent;

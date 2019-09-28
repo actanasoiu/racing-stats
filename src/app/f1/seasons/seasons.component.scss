@@ -1,0 +1,28 @@
+@import "../../../scss/index.scss";
+
+.season-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+  align-items: center;
+  grid-row-gap: 2em;
+  justify-items: center;
+}
+
+.season-details {
+  width: 90%;
+  margin: 3em auto;
+  opacity: 0.8;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $accent;
+  margin: 3em auto;
+  width: 50%;
+}

@@ -1,1 +1,24 @@
-<p>season-detail works!</p>
+<p *ngIf="selectedSeason">Season {{selectedSeason.season}} ({{selectedSeason.round}} rounds) - {{selectedSeason.driver | driver}}</p>
+
+<table *ngIf="results">
+    <thead>
+        <th colspan="2">Race</th>
+        <th>Winner</th>
+        <th>Constructor</th>
+        <th>Laps</th>
+        <th>Time</th>
+        <th>Points</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let result of results; let i = index"
+            [class.highlight]="selectedSeason.driver.driverId === result.results.Driver.driverId">
+            <td>{{i+1}}</td>
+            <td>{{result.raceName}}</td>
+            <td>{{result.results.Driver | driver}}</td>
+            <td>{{result.results.Constructor.name}}</td>
+            <td>{{result.results.laps}}</td>
+            <td>{{result.results.Time.time}}</td>
+            <td>{{result.results.points}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -4,6 +4,7 @@ import { F1ResultWinnerModel } from '../models/f1-result-winner.model';
 
 export const GET_SEASON_LIST = '[F1] Get Season List';
 export const SET_SEASON_LIST = '[F1] Set Season List';
+export const SELECT_SEASON = '[F1] Select Season';
 export const GET_SEASON_DETAILS = '[F1] Get Season Details';
 export const SET_SEASON_DETAILS = '[F1] Set Season Details';
 
@@ -15,6 +16,12 @@ export class SetSeasonList implements Action {
     readonly type = SET_SEASON_LIST;
 
     constructor(public payload: F1SeasonWinnerModel[]) { }
+}
+
+export class SelectSeason implements Action {
+    readonly type = SELECT_SEASON;
+
+    constructor(public payload: F1SeasonWinnerModel) { }
 }
 
 export class GetSeasonDetails implements Action {
@@ -32,5 +39,6 @@ export class SetSeasonDetails implements Action {
 export type F1Actions =
     | GetSeasonList
     | SetSeasonList
+    | SelectSeason
     | GetSeasonDetails
     | SetSeasonDetails;
