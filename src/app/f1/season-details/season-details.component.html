@@ -1,6 +1,7 @@
 <p *ngIf="selectedSeason">Season {{selectedSeason.season}} ({{selectedSeason.round}} rounds) - {{selectedSeason.driver | driver}}</p>
 
-<table *ngIf="results">
+<table #details
+       *ngIf="results">
     <thead>
         <th colspan="2">Race</th>
         <th>Winner</th>

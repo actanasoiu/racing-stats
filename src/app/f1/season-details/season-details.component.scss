@@ -2,22 +2,22 @@
 
 p {
   color: #ba9705;
-  font-size: 1.5em;
+  font-size: 2rem;
+  margin-bottom: 1em;
 }
 
 table {
   background-color: rgba(gray(5), 0.5);
   width: 100%;
-  color: #ddd;
+  color: $font-primary;
   text-align: center;
-
   border-collapse: collapse;
+  opacity: 0.8;
 
-  td,
-  th {
-    padding: 0.2em 0.5em;
-    word-break: break-word;
-    font-size: 1.1rem;
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
   }
 
   thead,
@@ -26,8 +26,15 @@ table {
     box-shadow: $box-shadow-accent;
   }
 
+  td,
   th {
-    background-color: black;
+    padding: 0.2em 0.5em;
+    word-break: break-word;
+    font-size: 1.1rem;
+  }
+
+  th {
+    background-color: $primary;
     color: $accent;
     text-align: center;
     text-transform: uppercase;
@@ -57,7 +64,7 @@ table {
 
   tr.highlight td:nth-child(3) {
     background-color: $accent;
-    color: black;
-    border-color: black;
+    color: $primary;
+    border-color: $primary;
   }
 }

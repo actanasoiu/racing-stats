@@ -5,8 +5,8 @@
   width: $spacer * 10;
   height: $spacer * 5;
   border-radius: 10px;
-  border: 1px solid black;
-  background-color: #ddd;
+  border: 1px solid $primary;
+  background-color: $font-primary;
   background: url("./../../../assets/cardbg3.jpg") center center;
   background-size: cover;
   box-shadow: $box-shadow;
@@ -46,9 +46,9 @@
 
 a.season-card-link {
   cursor: pointer;
-  color: #ddd;
+  color: $font-primary;
   text-decoration: none;
-  text-shadow: 1px 10px 5px black;
+  text-shadow: 1px 10px 5px $primary;
 
   &:focus,
   &:hover {
@@ -64,7 +64,7 @@ a.season-card-link {
     .season-card {
       border-color: $accent;
       box-shadow: $box-shadow-accent-tilt;
-      text-shadow: 1px 20px 5px black;
+      text-shadow: 1px 20px 5px $primary;
       transform: rotateX(-20deg);
       opacity: 1;
     }

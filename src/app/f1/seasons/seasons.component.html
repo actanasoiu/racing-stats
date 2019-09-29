@@ -1,5 +1,5 @@
 <section class="season-list">
-    <app-season *ngFor="let season of seasons | async"
+    <app-season *ngFor="let season of seasons$ | async"
                 [data]="season">
     </app-season>
 </section>

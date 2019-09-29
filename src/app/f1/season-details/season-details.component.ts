@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Store } from '@ngrx/store';
@@ -18,6 +18,7 @@ import * as F1Actions from '../../f1/store/f1.actions';
   styleUrls: ['./season-details.component.scss']
 })
 export class SeasonDetailsComponent implements OnInit {
+  @ViewChild('details', { static: false }) resultsElem: ElementRef;
   results: F1ResultWinnerModel[];
   selectedSeason: F1SeasonWinnerModel;
   season: number;
@@ -55,9 +56,13 @@ export class SeasonDetailsComponent implements OnInit {
             })
           ).subscribe((results: any) => {
             this.results = results.payload;
+            setTimeout(() => {
+              this.resultsElem.nativeElement.scrollIntoView({ behavior: 'smooth' });
+            }, 0);
           });
           return of(null);
         })
       ).subscribe();
   }
+
 }

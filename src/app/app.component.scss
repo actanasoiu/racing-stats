@@ -1,11 +1,15 @@
 @import "../scss/index.scss";
 
 .header-bg {
-  background: black url("../assets/bg-top.jpg") no-repeat top center fixed;
+  background: $primary url("../assets/bg-top.jpg") no-repeat top center fixed;
   background-size: cover;
   background-position-y: -9em;
   height: 10em;
   opacity: 0.5;
+
+  @include mq("big") {
+    background-position-y: -20em;
+  }
 }
 
 header {
@@ -27,4 +31,8 @@ header {
   font-size: 4rem;
   letter-spacing: 0;
   margin: 0.5em;
+}
+
+.error-msg {
+  font-size: 1.5rem;
 }

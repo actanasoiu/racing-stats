@@ -13,14 +13,14 @@ import { F1SeasonWinnerModel } from '../models/f1-season-winner.model';
   styleUrls: ['./seasons.component.scss']
 })
 export class SeasonsComponent implements OnInit {
-  seasons: Observable<F1SeasonWinnerModel[]>;
+  seasons$: Observable<F1SeasonWinnerModel[]>;
 
   constructor(
     private store: Store<fromApp.AppState>,
   ) { }
 
   ngOnInit() {
-    this.seasons = this.store.select(store => store.f1.seasons);
+    this.seasons$ = this.store.select(store => store.f1.seasons);
   }
 
 }

@@ -1,34 +1,16 @@
-@mixin underline($bg: currentColor, $margin: $spacer, $height: 2px, $width: 25%) {
-    &::after {
-      content: "";
-      display: block;
-      margin: $margin auto;
-      background: $bg;
-      height: $height;
-      width: $width;
-      @content;
-    }
+@mixin mq($size) {
+  $value: map-get(
+    $map: $breakpoints,
+    $key: $size
+  );
+  @media only screen and (min-width: $value) {
+    @content;
   }
-  
-  @mixin mq($size) {
-    $value: map-get(
-      $map: $breakpoints,
-      $key: $size
-    );
-    @media only screen and (min-width: $value) {
-      @content;
-    }
-  }
-  
-  @mixin limit-width() {
-    max-width: 450px;
-    margin: 0 auto;
-  }
-  
-  @mixin grid($cols: 3) {
-    display: grid;
-    grid: auto-flow / repeat($cols, 1fr);
-    grid-gap: $spacer;
-    max-width: 1200px;
-  }
-  
+}
+
+@mixin grid($cols: 4) {
+  display: grid;
+  grid: auto-flow / repeat($cols, 1fr);
+  grid-gap: $spacer;
+  max-width: 1200px;
+}

@@ -2,6 +2,12 @@
 <header>
     <span class='title--large'>F1</span>
     <span class='title'>Racing Statistics</span>
+    <span *ngIf="loading$ | async">
+        <app-loading-spinner></app-loading-spinner>
+    </span>
 </header>
+
+<p class="error-msg"
+   [innerHTML]="error$ | async"></p>
 
 <router-outlet></router-outlet>

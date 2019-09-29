@@ -1,6 +1,5 @@
 <a (click)="onSeasonSelected()"
-   class="season-card-link"
-   [class.active]="(selectedSeason | async) && (selectedSeason | async).season === data.season">
+   [ngClass]="{'season-card-link': true, 'active': (selectedSeason$ | async)?.season === data?.season}">
     <div class="season-card">
         <p class="season-card__title">{{data.season}}</p>
         <p class="season-card__subtitle">({{data.round}} rounds)</p>

@@ -15,7 +15,7 @@ import { F1SeasonWinnerModel } from './../models/f1-season-winner.model';
 export class SeasonComponent implements OnInit {
   @Input() data: F1SeasonWinnerModel;
 
-  selectedSeason: Observable<F1SeasonWinnerModel>;
+  selectedSeason$: Observable<F1SeasonWinnerModel>;
 
   constructor(
     private store: Store<fromApp.AppState>,
@@ -23,7 +23,7 @@ export class SeasonComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.selectedSeason = this.store.select(store => store.f1.selectedSeason);
+    this.selectedSeason$ = this.store.select(store => store.f1.selectedSeason);
   }
 
   onSeasonSelected() {

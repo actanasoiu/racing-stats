@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { appReducers, metaReducers } from './store/reducers/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     HttpClientModule,
     F1Module,
+    SharedModule,
     StoreModule.forRoot(appReducers, {
       metaReducers,
       runtimeChecks: {
