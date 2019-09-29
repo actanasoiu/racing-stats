@@ -1,8 +1,8 @@
 # RacingStats
 
 The two identified calls for getting necessary data:
-http://ergast.com/api/f1/2008/results/1
-http://ergast.com/api/f1/driverstandings/1?limit=11&offset=55
+- http://ergast.com/api/f1/2008/results/1
+- http://ergast.com/api/f1/driverstandings/1?limit=11&offset=55
 
 Comments in no particular order:
 
